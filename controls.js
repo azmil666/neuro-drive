@@ -26,10 +26,10 @@ class Controls{
                     break;
                 case "ArrowUp":
                     this.forward=true;
-                    break; 
+                    break;
                 case "ArrowDown":
                     this.reverse=true;
-                    break;            
+                    break;
             }
         }
         document.onkeyup=(event)=>{
@@ -42,10 +42,10 @@ class Controls{
                     break;
                 case "ArrowUp":
                     this.forward=false;
-                    break; 
+                    break;
                 case "ArrowDown":
                     this.reverse=false;
-                    break;            
+                    break;
             }
         }
     }

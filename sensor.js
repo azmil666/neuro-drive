@@ -17,8 +17,8 @@ class Sensor{
                 this.#getReading(
                     this.rays[i],
                     roadBorders,
-                traffic
-            )
+                    traffic
+                )
             );
         }
     }
@@ -37,6 +37,7 @@ class Sensor{
                 touches.push(touch);
             }
         }
+
         for(let i=0;i<traffic.length;i++){
             const poly=traffic[i].polygon;
             for(let j=0;j<poly.length;j++){
