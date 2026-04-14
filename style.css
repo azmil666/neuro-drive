@@ -1,31 +1,126 @@
-body{
-    margin:0;
-    background:darkgray;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at 50% 50%, #1e2029 0%, #0b0c10 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #e2e8f0;
+    height: 100vh;
 }
 
-#verticalButtons{
-    display:flex;
-    flex-direction:column;
+#verticalButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 24px;
+    z-index: 10;
 }
 
-button{
+button {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: #f8fafc;
+    padding: 12px 24px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.2), 
+        0 2px 4px -1px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.3), 
+        0 4px 6px -2px rgba(0, 0, 0, 0.15),
+        0 0 15px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 2px 4px -1px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+canvas {
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#networkCanvas {
+    background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    box-shadow: 
+        inset 0 0 40px rgba(0,0,0,0.8),
+        0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+#carCanvas {
+    background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+    box-shadow: 
+        inset 0 0 30px rgba(0,0,0,0.4),
+        0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+#stats {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+    color: #cbd5e1;
+    padding: 16px 20px;
+    border-radius: 14px;
+    font-family: 'Fira Code', 'SF Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    z-index: 100;
+}
+
+#resetBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
-    padding: 5px 5px 7px 5px;
-    margin: 2px;
-    cursor:pointer;
-}
-button:hover{
-    background:lightgray;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 
+        0 4px 12px rgba(37, 99, 235, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 100;
 }
 
-#networkCanvas{
-    background:black;
+#resetBtn:hover {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    box-shadow: 
+        0 8px 20px rgba(37, 99, 235, 0.4),
+        0 0 12px rgba(59, 130, 246, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
-#carCanvas{
-    background:lightgray;
+
+#resetBtn:active {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }

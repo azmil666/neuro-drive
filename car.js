@@ -11,6 +11,7 @@ class Car{
         this.friction=0.05;
         this.angle=0;
         this.damaged=false;
+        this.score = 0;
 
         this.useBrain=controlType=="AI";
 
@@ -45,6 +46,7 @@ class Car{
             this.#move();
             this.polygon=this.#createPolygon();
             this.damaged=this.#assessDamage(roadBorders,traffic);
+            this.score = 100 - this.y;
         }
         if(this.sensor){
             this.sensor.update(roadBorders,traffic);
