@@ -13,7 +13,7 @@ document.getElementById("resetBtn").onclick = () => {
     location.reload();
 };
 
-const N=1000;
+const N=100;
 const cars=generateCars(N);
 let bestCar=cars[0];
 if(localStorage.getItem("bestBrain")){

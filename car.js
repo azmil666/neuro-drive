@@ -12,6 +12,7 @@ class Car{
         this.angle=0;
         this.damaged=false;
         this.score = 0;
+        this.passed = 0;
 
         this.useBrain=controlType=="AI";
 
@@ -62,6 +63,12 @@ class Car{
                 this.controls.reverse=outputs[3];
             }
         }
+        for (let i = 0; i < traffic.length; i++) {
+    if (!traffic[i].passed && traffic[i].y > this.y) {
+        traffic[i].passed = true;
+        this.passed++;
+    }
+}
     }
 
     #assessDamage(roadBorders,traffic){
